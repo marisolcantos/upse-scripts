@@ -1,10 +1,20 @@
+function numeroAlAzarEntreLimites(lim1,lim2)
+{
+	var num=Math.floor(Math.random()*(lim1-lim2))+lim2;
+	return num;
+}
+var limiteSuperior=prompt("Ingrese limite superior: ");
+var limiteInferior=prompt("Ingrese limite Inferior: ");
 
-var segundoporminuto=60;
-var minutoporhora=60;
-var horapordia=24;
-var diaspormes=30;
-var mesesporaño =12;
+if (isNaN(limiteInferior) || isNaN(limiteSuperior))
+{
+	throw Error("Numero no es valido");
+}
 
-var segundopordia =segundoporminuto*minutoporhora*horapordia;
-document.write("<h1>calculadora del tiempo</h1><p>hay"+segundopordias+"en un dia </p>");
-
+var contador = 0;
+while (contador<10)
+{
+var randomico = numeroAlAzarEntreLimites(parseInt(limiteSuperior),parseInt(limiteInferior));
+document.write(randomico+" ");
+contador++;
+}
